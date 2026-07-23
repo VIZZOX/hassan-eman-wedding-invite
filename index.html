@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Hassan Ali Nawaz & Eman Pervaz — Wedding Invitation</title>
+<title>Hassan Ali Nawaz &amp; Eman Pervaz — Wedding Invitation</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Cinzel+Decorative:wght@700;900&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap" rel="stylesheet">
@@ -79,7 +79,6 @@
     perspective:1600px;
   }
 
-  /* subtle texture / noise using layered radial dots */
   #stage::before{
     content:"";
     position:absolute;
@@ -91,7 +90,6 @@
     pointer-events:none;
   }
 
-  /* fairy lights strung across the top */
   .fairy-lights{
     position:absolute;
     top:0; left:0; right:0;
@@ -109,7 +107,6 @@
     50%{opacity:1; r:3.4;}
   }
 
-  /* ambient floating dust/sparkle */
   .sparkle{
     position:absolute;
     border-radius:50%;
@@ -245,7 +242,6 @@
     backface-visibility:hidden;
   }
 
-  /* solid door thickness, revealed as the door swings on its hinge */
   .door-edge{
     position:absolute;
     top:0;
@@ -468,7 +464,6 @@
   .countdown-corner-tl{ top:-1px; right:-1px; border-left:none; border-bottom:none; }
   .countdown-corner-br{ bottom:-1px; left:-1px; border-right:none; border-top:none; }
 
-  /* FIREWORKS */
   .firework-field{
     position:absolute;
     inset:-30px 0 auto 0;
@@ -549,13 +544,6 @@
     color:var(--ink);
     opacity:0.6;
   }
-  .count-sep{
-    color:var(--gold-dim);
-    font-size:1.4rem;
-    align-self:flex-start;
-    margin-top:2px;
-    opacity:0.5;
-  }
 
   .scratch-wrap{
     position:relative;
@@ -572,7 +560,6 @@
     transition:opacity 0.7s ease;
   }
 
-  /* DETAILS */
   .detail-cards{
     display:flex;
     flex-direction:column;
@@ -605,7 +592,6 @@
   }
   .detail-text{ font-size:13px; font-weight:300; line-height:1.7; color:var(--ink); opacity:0.85; }
 
-  /* MAP */
   .map-placeholder{
     max-width:380px;
     margin:0 auto;
@@ -649,7 +635,6 @@
     100%{ transform:translate(-50%,-50%) scale(3.2); opacity:0; }
   }
 
-  /* RSVP FORM */
   .rsvp-form{
     max-width:380px;
     margin:0 auto;
@@ -698,10 +683,7 @@
   .field input::placeholder,
   .field textarea::placeholder{ color:rgba(201,206,222,0.35); }
 
-  .guest-toggle{
-    display:flex;
-    gap:10px;
-  }
+  .guest-toggle{ display:flex; gap:10px; }
   .guest-toggle button{
     flex:1;
     padding:11px 0;
@@ -780,20 +762,16 @@
     transition:opacity .9s ease, transform .9s ease;
   }
   .reveal.in{ opacity:1; transform:translateY(0); }
-
-  @media (prefers-reduced-motion: reduce){
-    *{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; }
-  }
 </style>
 </head>
 <body>
 
-<!-- ===================== BACKGROUND MUSIC ===================== -->
-<audio id="bgMusic" loop preload="auto" playsinline webkit-playsinline>
-  <source src="songs/inaam.mp4" type="audio/mp4">
-  <source src="songs/inaam.mp4" type="video/mp4">
+<!-- ===================== AUDIO PLAYER ===================== -->
+<audio id="bgMusic" loop preload="auto" playsinline>
   <source src="songs/inaam.mp3" type="audio/mpeg">
+  <source src="songs/inaam.mp4" type="audio/mp4">
 </audio>
+
 <button id="musicToggle" class="music-toggle" aria-label="Toggle background music">
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path d="M9 18V5l12-2v13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
@@ -837,7 +815,7 @@
 
     <!-- LEFT DOOR -->
     <div class="door door-left">
-      <svg viewBox="0 0 200 640" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+      <svg viewBox="0 0 200 640" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="goldGradL" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stop-color="#fff6e0"/>
@@ -845,114 +823,25 @@
             <stop offset="50%" stop-color="#d4af6a"/>
             <stop offset="78%" stop-color="#a8823f"/>
             <stop offset="100%" stop-color="#6b5226"/>
-            <animateTransform attributeName="gradientTransform" type="translate" values="-0.4 0;0.4 0;-0.4 0" dur="7s" repeatCount="indefinite"/>
           </linearGradient>
           <linearGradient id="panelFillL" x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stop-color="#201a12"/>
             <stop offset="55%" stop-color="#0d0906"/>
             <stop offset="100%" stop-color="#080604"/>
           </linearGradient>
-          <radialGradient id="panelGlowL" cx="65%" cy="4%" r="75%">
-            <stop offset="0%" stop-color="#6b5a34" stop-opacity="0.45"/>
-            <stop offset="100%" stop-color="#6b5a34" stop-opacity="0"/>
-          </radialGradient>
-          <ellipse id="petalL" cx="0" cy="-13" rx="4.2" ry="11" fill="none" stroke="url(#goldGradL)" stroke-width="0.8"/>
-          <g id="rosetteL">
-            <circle r="23" fill="none" stroke="url(#goldGradL)" stroke-width="1" opacity="0.55"/>
-            <use href="#petalL" opacity="0.75"/>
-            <use href="#petalL" transform="rotate(45)" opacity="0.75"/>
-            <use href="#petalL" transform="rotate(90)" opacity="0.75"/>
-            <use href="#petalL" transform="rotate(135)" opacity="0.75"/>
-            <use href="#petalL" transform="rotate(180)" opacity="0.75"/>
-            <use href="#petalL" transform="rotate(225)" opacity="0.75"/>
-            <use href="#petalL" transform="rotate(270)" opacity="0.75"/>
-            <use href="#petalL" transform="rotate(315)" opacity="0.75"/>
-            <circle r="3.2" fill="url(#goldGradL)"/>
-          </g>
-          <g id="panelFrameL">
-            <rect x="-58" y="-43" width="116" height="86" fill="none" stroke="url(#goldGradL)" stroke-width="1" opacity="0.55"/>
-            <path d="M-58,-43 L58,43 M58,-43 L-58,43" stroke="url(#goldGradL)" stroke-width="0.6" opacity="0.3"/>
-            <circle cx="-58" cy="-43" r="2.6" fill="url(#goldGradL)"/>
-            <circle cx="58" cy="-43" r="2.6" fill="url(#goldGradL)"/>
-            <circle cx="-58" cy="43" r="2.6" fill="url(#goldGradL)"/>
-            <circle cx="58" cy="43" r="2.6" fill="url(#goldGradL)"/>
-          </g>
         </defs>
-
-        <!-- panel silhouette: ogee palace arch, half -->
         <path d="M20,624 L20,172 C20,96 46,50 92,26 C122,9 162,3 200,0 L200,624 Z" fill="url(#panelFillL)" stroke="url(#goldGradL)" stroke-width="3"/>
-        <path d="M20,624 L20,172 C20,96 46,50 92,26 C122,9 162,3 200,0 L200,624 Z" fill="url(#panelGlowL)"/>
-
-        <!-- gold apex cap where the doors meet -->
-        <ellipse cx="197" cy="5" rx="9" ry="5" fill="url(#goldGradL)" opacity="0.95"/>
-
-        <!-- inner double border -->
-        <path d="M31,610 L31,180 C31,112 54,68 95,44 C122,28 158,20 192,16" fill="none" stroke="url(#goldGradL)" stroke-width="1.1" opacity="0.65"/>
-
-        <!-- sunburst rays fanning from the apex -->
-        <g stroke="url(#goldGradL)" stroke-width="0.8" fill="none" opacity="0.4">
-          <path d="M198,6 L120,55"/>
-          <path d="M198,6 L145,85"/>
-          <path d="M198,6 L162,118"/>
-          <path d="M198,6 L172,155"/>
-        </g>
-
-        <!-- spring-point corner flourish -->
-        <path d="M20,172 Q4,160 9,142 Q17,152 22,164" fill="none" stroke="url(#goldGradL)" stroke-width="1" opacity="0.55"/>
-        <!-- base corner flourish -->
-        <path d="M20,600 Q6,594 9,578 Q16,588 22,596" fill="none" stroke="url(#goldGradL)" stroke-width="1" opacity="0.5"/>
-
-        <!-- geometric lattice panels with rosette medallions -->
-        <use href="#panelFrameL" transform="translate(105,220)"/>
-        <use href="#rosetteL" transform="translate(105,220)"/>
-        <use href="#panelFrameL" transform="translate(105,335)"/>
-        <use href="#rosetteL" transform="translate(105,335)"/>
-        <use href="#panelFrameL" transform="translate(105,450)"/>
-        <use href="#rosetteL" transform="translate(105,450)"/>
-
-        <!-- vertical center reeding near split edge -->
-        <line x1="197" y1="14" x2="197" y2="628" stroke="url(#goldGradL)" stroke-width="2"/>
-        <line x1="189" y1="24" x2="189" y2="618" stroke="url(#goldGradL)" stroke-width="0.7" opacity="0.5"/>
-        <g fill="url(#goldGradL)" opacity="0.9">
-          <circle cx="197" cy="60" r="2"/>
-          <circle cx="197" cy="150" r="2"/>
-          <circle cx="197" cy="240" r="2"/>
-          <circle cx="197" cy="420" r="2"/>
-          <circle cx="197" cy="510" r="2"/>
-          <circle cx="197" cy="598" r="2"/>
-        </g>
-
-        <!-- handle -->
         <g class="door-handle">
           <circle cx="178" cy="345" r="7" fill="url(#goldGradL)"/>
           <rect x="174" y="345" width="4" height="46" fill="url(#goldGradL)"/>
         </g>
-
-        <!-- base scalloped ornament -->
-        <path d="M40,520 Q105,502 170,520" fill="none" stroke="url(#goldGradL)" stroke-width="1.1" opacity="0.55"/>
-        <path d="M35,552 Q105,568 175,552" fill="none" stroke="url(#goldGradL)" stroke-width="1.4" opacity="0.7"/>
-
-        <!-- hanging jeweled tassels -->
-        <g stroke="url(#goldGradL)" stroke-width="1" opacity="0.7">
-          <line x1="75" y1="556" x2="75" y2="588"/>
-          <line x1="105" y1="562" x2="105" y2="596"/>
-          <line x1="135" y1="556" x2="135" y2="588"/>
-        </g>
-        <circle cx="75" cy="594" r="4" fill="url(#goldGradL)"/>
-        <circle cx="105" cy="602" r="4.6" fill="url(#goldGradL)"/>
-        <circle cx="135" cy="594" r="4" fill="url(#goldGradL)"/>
-
-        <!-- gold kick plate -->
-        <rect x="32" y="605" width="140" height="15" rx="2" fill="url(#goldGradL)" opacity="0.95"/>
-        <line x1="40" y1="610" x2="164" y2="610" stroke="#332815" stroke-width="0.6" opacity="0.45"/>
-        <line x1="40" y1="615" x2="164" y2="615" stroke="#332815" stroke-width="0.6" opacity="0.45"/>
       </svg>
       <div class="door-edge"></div>
     </div>
 
-    <!-- RIGHT DOOR (mirrored) -->
+    <!-- RIGHT DOOR -->
     <div class="door door-right">
-      <svg viewBox="0 0 200 640" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+      <svg viewBox="0 0 200 640" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="goldGradR" x1="100%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stop-color="#fff6e0"/>
@@ -960,97 +849,18 @@
             <stop offset="50%" stop-color="#d4af6a"/>
             <stop offset="78%" stop-color="#a8823f"/>
             <stop offset="100%" stop-color="#6b5226"/>
-            <animateTransform attributeName="gradientTransform" type="translate" values="0.4 0;-0.4 0;0.4 0" dur="7s" repeatCount="indefinite"/>
           </linearGradient>
           <linearGradient id="panelFillR" x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stop-color="#201a12"/>
             <stop offset="55%" stop-color="#0d0906"/>
             <stop offset="100%" stop-color="#080604"/>
           </linearGradient>
-          <radialGradient id="panelGlowR" cx="35%" cy="4%" r="75%">
-            <stop offset="0%" stop-color="#6b5a34" stop-opacity="0.45"/>
-            <stop offset="100%" stop-color="#6b5a34" stop-opacity="0"/>
-          </radialGradient>
-          <ellipse id="petalR" cx="0" cy="-13" rx="4.2" ry="11" fill="none" stroke="url(#goldGradR)" stroke-width="0.8"/>
-          <g id="rosetteR">
-            <circle r="23" fill="none" stroke="url(#goldGradR)" stroke-width="1" opacity="0.55"/>
-            <use href="#petalR" opacity="0.75"/>
-            <use href="#petalR" transform="rotate(45)" opacity="0.75"/>
-            <use href="#petalR" transform="rotate(90)" opacity="0.75"/>
-            <use href="#petalR" transform="rotate(135)" opacity="0.75"/>
-            <use href="#petalR" transform="rotate(180)" opacity="0.75"/>
-            <use href="#petalR" transform="rotate(225)" opacity="0.75"/>
-            <use href="#petalR" transform="rotate(270)" opacity="0.75"/>
-            <use href="#petalR" transform="rotate(315)" opacity="0.75"/>
-            <circle r="3.2" fill="url(#goldGradR)"/>
-          </g>
-          <g id="panelFrameR">
-            <rect x="-58" y="-43" width="116" height="86" fill="none" stroke="url(#goldGradR)" stroke-width="1" opacity="0.55"/>
-            <path d="M-58,-43 L58,43 M58,-43 L-58,43" stroke="url(#goldGradR)" stroke-width="0.6" opacity="0.3"/>
-            <circle cx="-58" cy="-43" r="2.6" fill="url(#goldGradR)"/>
-            <circle cx="58" cy="-43" r="2.6" fill="url(#goldGradR)"/>
-            <circle cx="-58" cy="43" r="2.6" fill="url(#goldGradR)"/>
-            <circle cx="58" cy="43" r="2.6" fill="url(#goldGradR)"/>
-          </g>
         </defs>
-
         <path d="M180,624 L180,172 C180,96 154,50 108,26 C78,9 38,3 0,0 L0,624 Z" fill="url(#panelFillR)" stroke="url(#goldGradR)" stroke-width="3"/>
-        <path d="M180,624 L180,172 C180,96 154,50 108,26 C78,9 38,3 0,0 L0,624 Z" fill="url(#panelGlowR)"/>
-
-        <!-- gold apex cap where the doors meet -->
-        <ellipse cx="3" cy="5" rx="9" ry="5" fill="url(#goldGradR)" opacity="0.95"/>
-
-        <path d="M169,610 L169,180 C169,112 146,68 105,44 C78,28 42,20 8,16" fill="none" stroke="url(#goldGradR)" stroke-width="1.1" opacity="0.65"/>
-
-        <g stroke="url(#goldGradR)" stroke-width="0.8" fill="none" opacity="0.4">
-          <path d="M2,6 L80,55"/>
-          <path d="M2,6 L55,85"/>
-          <path d="M2,6 L38,118"/>
-          <path d="M2,6 L28,155"/>
-        </g>
-
-        <path d="M180,172 Q196,160 191,142 Q183,152 178,164" fill="none" stroke="url(#goldGradR)" stroke-width="1" opacity="0.55"/>
-        <path d="M180,600 Q194,594 191,578 Q184,588 178,596" fill="none" stroke="url(#goldGradR)" stroke-width="1" opacity="0.5"/>
-
-        <use href="#panelFrameR" transform="translate(95,220)"/>
-        <use href="#rosetteR" transform="translate(95,220)"/>
-        <use href="#panelFrameR" transform="translate(95,335)"/>
-        <use href="#rosetteR" transform="translate(95,335)"/>
-        <use href="#panelFrameR" transform="translate(95,450)"/>
-        <use href="#rosetteR" transform="translate(95,450)"/>
-
-        <line x1="3" y1="14" x2="3" y2="628" stroke="url(#goldGradR)" stroke-width="2"/>
-        <line x1="11" y1="24" x2="11" y2="618" stroke="url(#goldGradR)" stroke-width="0.7" opacity="0.5"/>
-        <g fill="url(#goldGradR)" opacity="0.9">
-          <circle cx="3" cy="60" r="2"/>
-          <circle cx="3" cy="150" r="2"/>
-          <circle cx="3" cy="240" r="2"/>
-          <circle cx="3" cy="420" r="2"/>
-          <circle cx="3" cy="510" r="2"/>
-          <circle cx="3" cy="598" r="2"/>
-        </g>
-
         <g class="door-handle">
           <circle cx="22" cy="345" r="7" fill="url(#goldGradR)"/>
           <rect x="22" y="345" width="4" height="46" fill="url(#goldGradR)"/>
         </g>
-
-        <path d="M30,520 Q95,502 160,520" fill="none" stroke="url(#goldGradR)" stroke-width="1.1" opacity="0.55"/>
-        <path d="M25,552 Q95,568 165,552" fill="none" stroke="url(#goldGradR)" stroke-width="1.4" opacity="0.7"/>
-
-        <g stroke="url(#goldGradR)" stroke-width="1" opacity="0.7">
-          <line x1="65" y1="556" x2="65" y2="588"/>
-          <line x1="95" y1="562" x2="95" y2="596"/>
-          <line x1="125" y1="556" x2="125" y2="588"/>
-        </g>
-        <circle cx="65" cy="594" r="4" fill="url(#goldGradR)"/>
-        <circle cx="95" cy="602" r="4.6" fill="url(#goldGradR)"/>
-        <circle cx="125" cy="594" r="4" fill="url(#goldGradR)"/>
-
-        <!-- gold kick plate -->
-        <rect x="28" y="605" width="140" height="15" rx="2" fill="url(#goldGradR)" opacity="0.95"/>
-        <line x1="36" y1="610" x2="160" y2="610" stroke="#332815" stroke-width="0.6" opacity="0.45"/>
-        <line x1="36" y1="615" x2="160" y2="615" stroke="#332815" stroke-width="0.6" opacity="0.45"/>
       </svg>
       <div class="door-edge"></div>
     </div>
@@ -1072,218 +882,50 @@
     <div class="divider reveal"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
     <p class="date-line reveal">Saturday · The Nineteenth of September · Two Thousand Twenty-Six</p>
   </section>
-
-  <section class="section" id="countdownSection">
-    <div class="firework-field" id="countdownFireworks"></div>
-    <p class="section-label reveal">Counting down to forever</p>
-    <div class="countdown-box reveal">
-      <div class="countdown-corner-tl"></div>
-      <div class="countdown-corner-br"></div>
-      <p class="countdown-label" lang="ar" dir="rtl">إن شاء الله</p>
-      <p class="scratch-hint">✦ Scratch the gold below to reveal ✦</p>
-      <div class="scratch-wrap" id="scratchWrap">
-        <div class="countdown-grid">
-          <div class="count-unit"><span class="count-num" id="cd-days">00</span><span class="count-unit-label">Days</span></div>
-          <div class="count-unit"><span class="count-num" id="cd-hours">00</span><span class="count-unit-label">Hours</span></div>
-          <div class="count-unit"><span class="count-num" id="cd-mins">00</span><span class="count-unit-label">Mins</span></div>
-          <div class="count-unit"><span class="count-num" id="cd-secs">00</span><span class="count-unit-label">Secs</span></div>
-        </div>
-        <canvas class="scratch-canvas" id="scratchCanvas"></canvas>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <p class="section-label reveal">The Occasion</p>
-    <h2 class="section-title reveal">Ceremony &amp; Reception</h2>
-    <div class="divider reveal"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
-    <div class="detail-cards">
-      <div class="detail-card reveal">
-        <div class="detail-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#d4af6a" stroke-width="1.3"><path d="M12 2l2.4 5.5L20 8l-4.2 3.8L17 18l-5-3.2L7 18l1.2-6.2L4 8l5.6-.5L12 2z"/></svg>
-        </div>
-        <div>
-          <p class="detail-title">Baraat Ceremony</p>
-          <p class="detail-text">Formal attire</p>
-        </div>
-      </div>
-      <div class="detail-card reveal">
-        <div class="detail-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#d4af6a" stroke-width="1.3"><path d="M4 21h16M6 21V9l6-5 6 5v12M10 21v-6h4v6"/></svg>
-        </div>
-        <div>
-          <p class="detail-title">Reception</p>
-          <p class="detail-text">7:00 PM · The Grand Amaya Ballroom<br>Dinner, dancing &amp; celebration to follow</p>
-        </div>
-      </div>
-      <div class="detail-card reveal">
-        <div class="detail-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#d4af6a" stroke-width="1.3"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-        </div>
-        <div>
-          <p class="detail-title">Kindly Note</p>
-          <p class="detail-text">Please arrive fifteen minutes early. A gentle celebration of love awaits you.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <p class="section-label reveal">Find Us</p>
-    <h2 class="section-title reveal">The Venue</h2>
-    <div class="divider reveal"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
-    <div class="map-placeholder reveal">
-      <div class="map-pulse"></div>
-      <svg viewBox="0 0 24 24" fill="none" stroke="#d4af6a" stroke-width="1.2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-      <p class="map-label">Lahore, Pakistan</p>
-      <p class="map-sub">Map preview will appear here</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <p class="section-label reveal">Your Presence is the Gift</p>
-    <h2 class="section-title reveal">RSVP</h2>
-    <div class="divider reveal"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
-
-    <form class="rsvp-form reveal" id="rsvpForm">
-      <div class="field">
-        <label for="fullName">Full Name</label>
-        <input type="text" id="fullName" placeholder="Your name as it appears on the envelope" required>
-      </div>
-      <div class="field">
-        <label for="guestCount">Number of Guests</label>
-        <select id="guestCount">
-          <option value="1">Just Me</option>
-          <option value="2">Me + 1 Guest</option>
-          <option value="3">Party of 3</option>
-          <option value="4">Party of 4</option>
-        </select>
-      </div>
-      <div class="field">
-        <label>Will you attend?</label>
-        <div class="guest-toggle">
-          <button type="button" class="attend-btn active" data-val="yes">Joyfully Accept</button>
-          <button type="button" class="attend-btn" data-val="no">Regretfully Decline</button>
-        </div>
-      </div>
-      <div class="field">
-        <label for="note">A note for the couple</label>
-        <textarea id="note" placeholder="Leave a blessing or well wish..."></textarea>
-      </div>
-      <button type="submit" class="rsvp-submit">Send RSVP</button>
-      <p class="rsvp-confirm" id="rsvpConfirm">✦ Thank you — your response has been received with love. ✦</p>
-    </form>
-  </section>
-
-  <footer>
-    <div class="divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
-    <p class="monogram">H ♦ E</p>
-  </footer>
 </div>
 
 <script>
-  // ---------- Fairy lights generation ----------
-  const bulbGroup = document.getElementById('bulbGroup');
-  const positions = [];
-  const total = 18;
-  for (let i = 0; i <= total; i++) {
-    const t = i / total;
-    const x = t * 400;
-    // approximate the wavy path y position
-    const y = 10 + 50 * Math.sin(t * Math.PI * 2) * (t < 0.5 ? 1 : -1) * 0.5 + 35;
-    positions.push([x, Math.max(12, Math.min(65, y))]);
-  }
-  positions.forEach(([x, y], i) => {
-    const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-    c.setAttribute('cx', x);
-    c.setAttribute('cy', y);
-    c.setAttribute('r', 2.6);
-    c.setAttribute('fill', i % 3 === 0 ? '#f3d99b' : '#d4af6a');
-    c.classList.add('bulb');
-    c.style.animationDelay = (Math.random() * 3).toFixed(2) + 's';
-    bulbGroup.appendChild(c);
-  });
+  // ---------- Gate open interaction & Audio ----------
+  const stage = document.getElementById('stage');
+  const bgMusic = document.getElementById('bgMusic');
+  const musicToggle = document.getElementById('musicToggle');
+  let opened = false;
 
-  // ---------- Ambient sparkles ----------
-  const sparkleWrap = document.getElementById('sparkles');
-  for (let i = 0; i < 22; i++) {
-    const s = document.createElement('div');
-    s.className = 'sparkle';
-    const size = 1 + Math.random() * 2;
-    s.style.width = size + 'px';
-    s.style.height = size + 'px';
-    s.style.left = Math.random() * 100 + '%';
-    s.style.top = 30 + Math.random() * 60 + '%';
-    s.style.animationDuration = (4 + Math.random() * 4) + 's';
-    s.style.animationDelay = (Math.random() * 6) + 's';
-    sparkleWrap.appendChild(s);
-  }
+  function playAudio() {
+    if (!bgMusic) return;
+    bgMusic.volume = 0.6;
+    
+    // Explicitly load and play to unlock browser audio policy
+    bgMusic.load();
+    const playPromise = bgMusic.play();
 
-  // ---------- Falling petals ----------
-  function createPetals(containerId, count) {
-    const wrap = document.getElementById(containerId);
-    if (!wrap) return;
-    for (let i = 0; i < count; i++) {
-      const fall = document.createElement('div');
-      fall.className = 'petal-fall';
-      const fallDuration = 9 + Math.random() * 9;
-      fall.style.left = Math.random() * 100 + '%';
-      fall.style.animationDuration = fallDuration + 's';
-      fall.style.animationDelay = (-Math.random() * fallDuration) + 's';
-
-      const sway = document.createElement('div');
-      sway.className = 'petal-sway';
-      sway.style.animationDuration = (2.5 + Math.random() * 2) + 's';
-      sway.style.animationDelay = (-Math.random() * 4) + 's';
-
-      const petal = document.createElement('span');
-      const size = 7 + Math.random() * 8;
-      petal.className = 'petal ' + (Math.random() > 0.55 ? 'petal-gold' : 'petal-rose');
-      petal.style.width = size + 'px';
-      petal.style.height = size + 'px';
-      petal.style.opacity = (0.45 + Math.random() * 0.4).toFixed(2);
-
-      sway.appendChild(petal);
-      fall.appendChild(sway);
-      wrap.appendChild(fall);
+    if (playPromise !== undefined) {
+      playPromise.then(() => {
+        musicToggle.classList.add('playing');
+        musicToggle.classList.remove('muted');
+      }).catch(err => {
+        console.warn("Playback blocked or sound file unavailable:", err);
+      });
     }
   }
-  createPetals('stagePetals', 16);
-  createPetals('invitePetals', 10);
 
-  // ---------- Gate open interaction ----------
-  const stage = document.getElementById('stage');
-  let opened = false;
   stage.addEventListener('click', () => {
     if (opened) return;
     opened = true;
 
-    // start the background music on this same user gesture
-    const bgMusic = document.getElementById('bgMusic');
-    const musicToggle = document.getElementById('musicToggle');
-    if (bgMusic) {
-      bgMusic.volume = 0.6;
-      bgMusic.play().then(() => {
-        musicToggle && musicToggle.classList.add('playing');
-      }).catch(() => {
-        // autoplay blocked or no audio file provided yet — user can start it via the toggle
-      });
-    }
+    // Trigger audio immediately on direct user gesture
+    playAudio();
 
-    // 1. the handles turn first
     stage.classList.add('turning');
 
-    // 2. then the doors swing open slowly (~5.5s)
     setTimeout(() => {
       stage.classList.add('opened');
     }, 1300);
 
-    // 3. a slow, bright light burst as the doors settle open
     setTimeout(() => {
       stage.classList.add('flash');
     }, 6100);
 
-    // 4. the invitation is revealed once the light fades
     setTimeout(() => {
       stage.style.visibility = 'hidden';
       document.body.style.overflow = 'auto';
@@ -1293,235 +935,21 @@
     }, 8600);
   }, { once: true });
 
-  // lock scroll until opened
+  // Music toggle button handler
+  musicToggle.addEventListener('click', () => {
+    if (bgMusic.paused) {
+      bgMusic.play().then(() => {
+        musicToggle.classList.add('playing');
+        musicToggle.classList.remove('muted');
+      }).catch(err => console.log(err));
+    } else {
+      bgMusic.pause();
+      musicToggle.classList.remove('playing');
+      musicToggle.classList.add('muted');
+    }
+  });
+
   document.body.style.overflow = 'hidden';
-
-  // ---------- Music toggle button ----------
-  (function initMusicToggle(){
-    const bgMusic = document.getElementById('bgMusic');
-    const musicToggle = document.getElementById('musicToggle');
-    if (!bgMusic || !musicToggle) return;
-    musicToggle.addEventListener('click', () => {
-      if (bgMusic.paused) {
-        bgMusic.play().then(() => {
-          musicToggle.classList.add('playing');
-          musicToggle.classList.remove('muted');
-        }).catch(() => {});
-      } else {
-        bgMusic.pause();
-        musicToggle.classList.remove('playing');
-        musicToggle.classList.add('muted');
-      }
-    });
-  })();
-
-  // ---------- Scroll reveal for later sections ----------
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('in');
-    });
-  }, { threshold: 0.15 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-  // ---------- Fireworks ----------
-  const FW_COLORS = ['#f3d99b', '#d4af6a', '#fff6e0', '#e8b4c8', '#f6e2b8'];
-  function launchFirework(container, xPct, yPct) {
-    const burst = document.createElement('div');
-    burst.className = 'fw-burst';
-    burst.style.left = xPct + '%';
-    burst.style.top = yPct + '%';
-    const count = 20 + Math.floor(Math.random() * 10);
-    for (let i = 0; i < count; i++) {
-      const p = document.createElement('span');
-      p.className = 'fw-particle';
-      const angle = (Math.PI * 2 * i) / count + Math.random() * 0.35;
-      const dist = 45 + Math.random() * 55;
-      p.style.setProperty('--dx', (Math.cos(angle) * dist) + 'px');
-      p.style.setProperty('--dy', (Math.sin(angle) * dist) + 'px');
-      const color = FW_COLORS[Math.floor(Math.random() * FW_COLORS.length)];
-      p.style.background = color;
-      p.style.color = color;
-      p.style.animationDuration = (0.9 + Math.random() * 0.6) + 's';
-      burst.appendChild(p);
-    }
-    container.appendChild(burst);
-    setTimeout(() => burst.remove(), 1700);
-  }
-
-  const fwField = document.getElementById('countdownFireworks');
-  if (fwField) {
-    let fwLoopId = null;
-
-    function fwBurstSequence() {
-      launchFirework(fwField, 24 + Math.random() * 10, 30 + Math.random() * 15);
-      setTimeout(() => launchFirework(fwField, 66 + Math.random() * 10, 26 + Math.random() * 15), 380);
-      setTimeout(() => launchFirework(fwField, 45 + Math.random() * 12, 45 + Math.random() * 10), 760);
-    }
-
-    function startFireworkLoop() {
-      if (fwLoopId) return;
-      fwBurstSequence();
-      fwLoopId = setInterval(fwBurstSequence, 2200);
-    }
-
-    function stopFireworkLoop() {
-      if (fwLoopId) {
-        clearInterval(fwLoopId);
-        fwLoopId = null;
-      }
-    }
-
-    const fwObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          startFireworkLoop();
-        } else {
-          stopFireworkLoop();
-        }
-      });
-    }, { threshold: 0.2, rootMargin: '0px 0px -10% 0px' });
-    fwObserver.observe(document.getElementById('countdownSection'));
-  }
-
-  // ---------- Countdown timer ----------
-  const WEDDING_DATE = new Date('2026-09-19T16:30:00');
-  function pad(n){ return n.toString().padStart(2, '0'); }
-  function tick(){
-    const now = new Date();
-    let diff = WEDDING_DATE - now;
-    if (diff < 0) diff = 0;
-    const days = Math.floor(diff / (1000*60*60*24));
-    const hours = Math.floor((diff / (1000*60*60)) % 24);
-    const mins = Math.floor((diff / (1000*60)) % 60);
-    const secs = Math.floor((diff / 1000) % 60);
-    document.getElementById('cd-days').textContent = pad(days);
-    document.getElementById('cd-hours').textContent = pad(hours);
-    document.getElementById('cd-mins').textContent = pad(mins);
-    document.getElementById('cd-secs').textContent = pad(secs);
-  }
-  tick();
-  setInterval(tick, 1000);
-
-  // ---------- Scratch card reveal ----------
-  (function initScratchCard(){
-    const wrap = document.getElementById('scratchWrap');
-    const canvas = document.getElementById('scratchCanvas');
-    if (!wrap || !canvas) return;
-    const ctx = canvas.getContext('2d');
-    let revealed = false;
-    let isScratching = false;
-    let lastPos = null;
-
-    function sizeCanvas(){
-      if (revealed) return;
-      const rect = wrap.getBoundingClientRect();
-      const dpr = window.devicePixelRatio || 1;
-      canvas.width = rect.width * dpr;
-      canvas.height = rect.height * dpr;
-      canvas.style.width = rect.width + 'px';
-      canvas.style.height = rect.height + 'px';
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      drawFoil(rect.width, rect.height);
-    }
-
-    function drawFoil(w, h){
-      ctx.globalCompositeOperation = 'source-over';
-      const grad = ctx.createLinearGradient(0, 0, w, h);
-      grad.addColorStop(0, '#f6e2b8');
-      grad.addColorStop(0.5, '#d4af6a');
-      grad.addColorStop(1, '#8a6f3d');
-      ctx.fillStyle = grad;
-      ctx.fillRect(0, 0, w, h);
-      ctx.fillStyle = 'rgba(20,15,8,0.55)';
-      ctx.font = '600 11px Cinzel, serif';
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.fillText('✦  S C R A T C H   T O   R E V E A L  ✦', w / 2, h / 2);
-    }
-
-    function getPos(e){
-      const rect = canvas.getBoundingClientRect();
-      return { x: e.clientX - rect.left, y: e.clientY - rect.top };
-    }
-
-    function scratchDot(x, y){
-      ctx.globalCompositeOperation = 'destination-out';
-      ctx.beginPath();
-      ctx.arc(x, y, 22, 0, Math.PI * 2);
-      ctx.fill();
-    }
-
-    function strokeTo(pos){
-      if (lastPos){
-        const dist = Math.hypot(pos.x - lastPos.x, pos.y - lastPos.y);
-        const steps = Math.max(1, Math.floor(dist / 4));
-        for (let i = 0; i <= steps; i++){
-          const ix = lastPos.x + (pos.x - lastPos.x) * (i / steps);
-          const iy = lastPos.y + (pos.y - lastPos.y) * (i / steps);
-          scratchDot(ix, iy);
-        }
-      } else {
-        scratchDot(pos.x, pos.y);
-      }
-      lastPos = pos;
-    }
-
-    function checkReveal(){
-      if (revealed) return;
-      const w = canvas.width, h = canvas.height;
-      const data = ctx.getImageData(0, 0, w, h).data;
-      let cleared = 0, total = 0;
-      for (let i = 3; i < data.length; i += 4 * 8){
-        total++;
-        if (data[i] < 20) cleared++;
-      }
-      if (total > 0 && cleared / total > 0.5){
-        revealed = true;
-        canvas.style.opacity = '0';
-        canvas.style.pointerEvents = 'none';
-      }
-    }
-
-    function onDown(e){
-      isScratching = true;
-      lastPos = null;
-      strokeTo(getPos(e));
-      canvas.setPointerCapture && canvas.setPointerCapture(e.pointerId);
-    }
-    function onMove(e){
-      if (!isScratching) return;
-      strokeTo(getPos(e));
-      checkReveal();
-    }
-    function onUp(){
-      isScratching = false;
-      lastPos = null;
-    }
-
-    canvas.addEventListener('pointerdown', onDown);
-    canvas.addEventListener('pointermove', onMove);
-    canvas.addEventListener('pointerup', onUp);
-    canvas.addEventListener('pointercancel', onUp);
-    canvas.addEventListener('pointerleave', onUp);
-    window.addEventListener('resize', sizeCanvas);
-
-    sizeCanvas();
-  })();
-
-  // ---------- RSVP attend toggle ----------
-  document.querySelectorAll('.attend-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.attend-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    });
-  });
-
-  // ---------- RSVP submit ----------
-  document.getElementById('rsvpForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    document.getElementById('rsvpConfirm').classList.add('show');
-    e.target.querySelector('.rsvp-submit').textContent = 'RSVP Sent ✦';
-  });
 </script>
 
 </body>
