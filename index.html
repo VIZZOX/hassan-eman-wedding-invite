@@ -789,8 +789,9 @@
 <body>
 
 <!-- ===================== BACKGROUND MUSIC ===================== -->
-<audio id="bgMusic" loop playsinline preload="auto">
+<audio id="bgMusic" loop preload="auto" playsinline webkit-playsinline>
   <source src="songs/inaam.mp4" type="audio/mp4">
+  <source src="songs/inaam.mp4" type="video/mp4">
   <source src="songs/inaam.mp3" type="audio/mpeg">
 </audio>
 <button id="musicToggle" class="music-toggle" aria-label="Toggle background music">
@@ -1263,12 +1264,9 @@
     if (bgMusic) {
       bgMusic.volume = 0.6;
       bgMusic.play().then(() => {
-        if (musicToggle) {
-          musicToggle.classList.add('playing');
-          musicToggle.classList.remove('muted');
-        }
-      }).catch((err) => {
-        console.log("Audio autoplay prevented by browser policy:", err);
+        musicToggle && musicToggle.classList.add('playing');
+      }).catch(() => {
+        // autoplay blocked or no audio file provided yet — user can start it via the toggle
       });
     }
 
